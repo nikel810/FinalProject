@@ -8,15 +8,24 @@
     <h1>Newspin</h1>
     <h2>Save and share your articles</h2>
 
-    <%= form_for :user, url: '/profile' do |f| %>
+    <%= form_for :user, url: '/signup' do |f| %>
 
       Name: <%= f.text_field :name %><br>
       Email: <%= f.text_field :email %><br>
       Password: <%= f.password_field :password %><br>
       Password Confirmation: <%= f.password_field :password_confirmation %><br>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Sign Up" %>
 
     <% end %>
+
+    <%= form_for :user, url: '/login' do |f| %>
+
+      Email: <%= f.text_field :email %><br>
+      Password: <%= f.password_field :password %><br>
+      <%= f.submit "Log In" %>
+
+    <% end %>
+
 
   </body>
 </html>
