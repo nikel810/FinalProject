@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-html {
+.welcome_page_html {
     display: table;
     margin: auto;
 }
 
-body {
+.welcome_page_body {
     display: table-cell;
     vertical-align: middle;
     text-align:center;
@@ -39,10 +39,8 @@ body {
 
 .btn {
   margin: 4px;
-  font-family: 'Josefin Sans', sans-serif;
 }
 
 input, input[placeholder]{
   text-align:center;
-  font-family: 'Josefin Sans', sans-serif;
 }

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def timeline
+  def profile
   end
 
   private
