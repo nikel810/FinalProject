@@ -1,3 +1,48 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    text-align:center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.newspin_header {
+  margin-top: 20%;
+  font-family: 'Special Elite', cursive;
+  font-size: 410%;
+  font-weight: bold;
+}
+
+.slogan {
+  margin-top: 11%;
+  margin-bottom: 13%;
+  font-family: 'Special Elite', cursive;
+  font-size: 230%;
+}
+
+.user_inputs {
+  width: 60%;
+  padding: 2%;
+  line-height: 26px;
+  margin: 4px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.btn {
+  margin: 4px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+input, input[placeholder]{
+  text-align:center;
+  font-family: 'Josefin Sans', sans-serif;
+}

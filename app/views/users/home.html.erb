@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Special+Elite" rel="stylesheet">
     <meta charset="utf-8">
     <title>Newspin</title>
   </head>
   <body>
-    <h1>Newspin</h1>
-    <h2>Save and share your articles</h2>
 
-    <%= form_for :user, url: '/signup' do |f| %>
+    <h1 class="newspin_header">Newspin</h1>
 
-      Name: <%= f.text_field :name %><br>
-      Email: <%= f.text_field :email %><br>
-      Password: <%= f.password_field :password %><br>
-      Password Confirmation: <%= f.password_field :password_confirmation %><br>
-      <%= f.submit "Sign Up" %>
+    <h2 class="slogan">Save and share your articles</h2>
 
-    <% end %>
+    <div class="user_forms">
+      <%= form_for :user, url: '/signup', :html => { :class => "signup-form" } do |f| %>
+      <%= f.text_field :name,
+                        placeholder: "Name",
+                        :class => "user_inputs"%><br>
+      <%= f.text_field :email,
+                        placeholder: "Email",
+                        :class => "user_inputs" %><br>
+      <%= f.password_field :password,
+                            placeholder: "Password",
+                            :class => "user_inputs" %><br>
+      <%= f.password_field :password_confirmation,
+                            placeholder: "Password Confirmation",
+                            :class => "user_inputs" %><br>
+      <%= f.submit "Sign Up",
+                    :class => "btn btn-default" %>
+      <% end %>
 
-    <%= form_for :user, url: '/login' do |f| %>
-
-      Email: <%= f.text_field :email %><br>
-      Password: <%= f.password_field :password %><br>
-      <%= f.submit "Log In" %>
-
-    <% end %>
-
+      <%= form_for :user, url: '/login', :html => { :class => "login-form" } do |f| %>
+      <%= f.text_field :email,
+                        placeholder: "Email",
+                        :class => "user_inputs" %><br>
+      <%= f.password_field :password,
+                            placeholder: "Password",
+                            :class => "user_inputs" %><br>
+      <%= f.submit "Log In",
+                    :class => "btn btn-default" %>
+      <% end %>
+    </div>
 
   </body>
 </html>
