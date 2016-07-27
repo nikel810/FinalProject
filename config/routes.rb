@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   #welcome page
   get '/', to: 'users#home'
-  post '/signup', to: 'users#create'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  post '/signup', to: 'users#create_user'
+  get '/login', to: 'sessions#create_session'
+  post '/login', to: 'sessions#create_session'
+  delete '/logout', to: 'sessions#destroy_session'
   get '/timeline', to: 'articles#timeline'
 
   #timeline

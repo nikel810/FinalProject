@@ -3,9 +3,10 @@ class UsersController < ApplicationController
   def home
   end
 
-  def create
+  def create_user
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to '/timeline'
     else
       redirect_to '/'
@@ -13,6 +14,11 @@ class UsersController < ApplicationController
   end
 
   def profile
+    if current_user == nil
+      redirect_to '/'
+    else
+      render :profile
+    end
   end
 
   private
