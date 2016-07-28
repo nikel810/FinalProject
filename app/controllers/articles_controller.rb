@@ -8,4 +8,30 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def create
+    article_url = current_user.articles.new(
+      :url => params[:article_url])
+
+    thumbnail = LinkThumbnailer.generate(article_url.url)
+    url = thumbnail.url
+    title = thumbnail.title
+    description = thumbnail.description
+
+    article =current_user.articles.new(
+      :url => url,
+      :title => title,
+      :description => description)
+
+    article.save
+
+    redirect_to("/profile") #get method für route zum
+  end
+
+  # def show
+  #   @id = params[:id]
+  #   @contact_id = Contact.find_by(id: @id)
+  #   render 'show'
+  #   # redirect_to("/contacts")
+  # end
+
 end
