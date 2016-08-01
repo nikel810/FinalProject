@@ -2,30 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.navbar.navbar-default.navbar-color {
+  margin: 0;
+  background-color: white;
+}
+.article-background {
+  background-color: #fafafa;
+}
+
+.article-padding-background {
+  padding-top: 16px;
+  background-color: #fafafa;
+}
+
+.container-profile-articles {
+  background-color: #ffffff;
+}
+
 .container-profile-articles {
   width: 45%;
   margin: 0 auto;
   margin-top: 25px;
-  border-top: 2px solid #e7e7e7;
-  border-bottom: 1px solid #e7e7e7;
 }
 
 .article-box {
-  border-left: 2px solid #e7e7e7;
-  border-right: 2px solid #e7e7e7;
+  border: 1px solid #e7e7e7;
+}
+
+.article-heading{
+  background-color: #ffffff;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  padding: 4% 3% 2% 7%;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap
+}
+
+.article-img-container{
+  width: 30%;
+}
+
+.article-img{
+  width: 100%;
+  padding: 3% 5% 0% 0%;
+  height: auto;
+  float: left;
 }
 
 .article-title{
-  font-family: 'Muli', sans-serif;
-  padding-left: 7%;
-  padding-right: 3%;
-  border-bottom: 1px solid #f0f0f0;
+  width: 70%;
+  float: right;
 }
 
 .article-description {
-  font-family: 'Open Sans', sans-serif;
-  padding-left: 7%;
-  padding-right: 3%;
-  border-bottom: 2px solid #e7e7e7;
-
+  background-color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  padding: 2% 3% 4% 7%;
 }

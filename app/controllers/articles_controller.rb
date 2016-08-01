@@ -16,11 +16,15 @@ class ArticlesController < ApplicationController
     url = thumbnail.url
     title = thumbnail.title
     description = thumbnail.description
+    img = thumbnail.images[0].src
+    favicon = thumbnail.favicon
 
     @article = current_user.articles.new(
       :url => url,
       :title => title,
-      :description => description)
+      :description => description,
+      :img => img,
+      :favicon => favicon)
 
     @article.save
 

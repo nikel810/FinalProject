@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 
   def profile
     if current_user
-      @articles = current_user.articles
+      @articles = current_user.articles.sort { |x, y| y["created_at"] <=> x["created_at"] }
+
       render :profile
     else
       render :home

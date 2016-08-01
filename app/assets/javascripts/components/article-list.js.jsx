@@ -9,7 +9,7 @@ var ArticleList = React.createClass({
     return (
       <div>
         {this.props.articles.map(function (article) {
-          return <Article key={article.id} title={article.title} description={article.description} />
+          return <Article key={article.id} title={article.title} description={article.description} img={article.img} favicon={article.favicon}/>
         })}
       </div>
     );
