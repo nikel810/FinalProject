@@ -43,10 +43,26 @@
     </div>
 
     <div class="row article-background">
+      <div class="profile-infos">
+        <div class="profile-name">
+            <%= current_user.name %>
+        </div>
+        <div class="profile-stats">
+          <ul class="list-unstyled">
+            <li>Articles posted: <b class="bold">55</b></li>
+            <li>Followers: <b class="bold">36</b></li>
+            <li>Following: <b class="bold">41</b></li>
+            <li>Favourite Newspaper: <b class="bold">NYTimes</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row article-background">
       <div class='container-add-link'>
 
         <form class="add-article-url" action="/profile/add_article" method="POST">
-          <input type="url" class="form-control" name="article_url" placeholder="Save your article here">
+          <input type="url" class="form-control add-article-input-field" name="article_url" placeholder="Save your article here">
           <button type="submit" class="btn btn-default article-submit" name="submit" value="submit">POST</button>
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         </form>
