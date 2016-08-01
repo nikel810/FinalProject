@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#create_session'
   post '/login', to: 'sessions#create_session'
   delete '/logout', to: 'sessions#destroy_session'
-  get '/timeline', to: 'articles#timeline'
-  get '/profile', to: 'users#profile'
+  get '/timeline', to: 'articles#timeline'  # add id to url
+  get '/profile', to: 'users#profile'  # add id to url
   post '/profile/add_article', to: 'articles#create'
-  #   get '/show/:id', to: 'contact#show'
 end

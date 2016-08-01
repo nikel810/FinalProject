@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
   def home
+    if current_user
+      redirect_to '/timeline'
+    else
+      render :home
+    end
   end
 
   def create_user
@@ -14,11 +19,13 @@ class UsersController < ApplicationController
   end
 
   def profile
-    if current_user == nil
-      redirect_to '/'
-    else
+    if current_user
+      @articles = current_user.articles
       render :profile
+    else
+      render :home
     end
+
   end
 
   private

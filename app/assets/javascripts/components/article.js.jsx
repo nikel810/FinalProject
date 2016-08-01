@@ -1,23 +1,16 @@
 var Article = React.createClass({
-
   render: function(){
 
     return(
-      <div>
-        <div className="">
+      <div className="article-box">
+        <div className="article-title">
           {this.props.title}
         </div>
-        <div className="">
+        <div className="article-description">
           {this.props.description}
         </div>
       </div>
-  );
+    );
+
   }
 });
-
-
-
-//
-// <Article title="my_article" description ="my_description"/>
-// RUBY
-// <%= react_component('HelloMessage', name: 'John') %>

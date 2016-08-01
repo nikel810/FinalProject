@@ -17,21 +17,15 @@ class ArticlesController < ApplicationController
     title = thumbnail.title
     description = thumbnail.description
 
-    article =current_user.articles.new(
+    @article = current_user.articles.new(
       :url => url,
       :title => title,
       :description => description)
 
-    article.save
+    @article.save
 
-    redirect_to("/profile") #get method für route zum
+    redirect_to("/profile")
   end
 
-  # def show
-  #   @id = params[:id]
-  #   @contact_id = Contact.find_by(id: @id)
-  #   render 'show'
-  #   # redirect_to("/contacts")
-  # end
 
 end

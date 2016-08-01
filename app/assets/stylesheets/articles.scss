@@ -1,3 +1,31 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-profile-articles {
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-top: 2px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.article-box {
+  border-left: 2px solid #e7e7e7;
+  border-right: 2px solid #e7e7e7;
+}
+
+.article-title{
+  font-family: 'Muli', sans-serif;
+  padding-left: 7%;
+  padding-right: 3%;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.article-description {
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 7%;
+  padding-right: 3%;
+  border-bottom: 2px solid #e7e7e7;
+
+}
