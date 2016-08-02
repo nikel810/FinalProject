@@ -7,11 +7,11 @@ var Article = React.createClass({
           <div className="article-heading">
             <div className="article-img-container">
               <a href={this.props.url}>
-                <img href={this.props.url} className="article-img" src={this.props.img} alt="thumbnail" />
+                <img href={this.props.url} className="article-img" target="_blank" src={this.props.img} alt="thumbnail" />
               </a>
             </div>
             <div className="article-title">
-              <a className="react-links" href={this.props.url}>{this.props.title}</a>
+              <a className="react-links" target="_blank" href={this.props.url}>{this.props.title}</a>
             </div>
           </div>
           <div className="article-description">
