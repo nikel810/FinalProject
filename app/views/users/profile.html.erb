@@ -42,7 +42,7 @@
       </nav>
     </div>
 
-    <div class="row article-background">
+    <div class="row profile-timeline-background">
       <div class="profile-infos">
         <div class="profile-name">
             <%= current_user.name %> <%= current_user.surname %>
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="row article-background">
+    <div class="row profile-timeline-background">
       <div class='container-add-link'>
 
         <form class="add-article-url" action="/profile/add_article" method="POST">
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="row article-background">
+    <div class="row profile-timeline-background">
       <div class='container-profile-articles'>
 
         <%= react_component('ArticleList', articles: @articles) %>

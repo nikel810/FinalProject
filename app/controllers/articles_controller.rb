@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
     if current_user == nil
       redirect_to '/'
     else
+      @articles = Article.all.sort { |x, y| y["created_at"] <=> x["created_at"] }
+
       render :timeline
     end
   end
@@ -28,7 +30,7 @@ class ArticlesController < ApplicationController
 
     @article.save
 
-    redirect_to("/profile")
+    redirect_to("/profile/#{current_user.id}")
   end
 
 

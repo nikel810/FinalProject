@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if current_user
       @articles = current_user.articles.sort { |x, y| y["created_at"] <=> x["created_at"] }
 
-      render :profile
+      render action: 'profile', id: current_user.id
     else
       render :home
     end
