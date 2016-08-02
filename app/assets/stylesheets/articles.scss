@@ -26,7 +26,7 @@
 }
 
 .article-padding-background {
-  padding-top: 6px;
+  padding-top: 15px;
   background-color: #fafafa;
 }
 
@@ -112,6 +112,12 @@ input.form-control, add-article-input-field {
   flex: 1;
   flex-direction: row;
   flex-wrap: nowrap
+}
+
+.article-upload-info {
+  background-color: #ffffff;
+  font-family: 'Muli', sans-serif;
+  padding: 4% 3% 1% 7%;
 }
 
 .article-img-container{

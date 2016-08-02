@@ -4,6 +4,9 @@ var TimelineArticles = React.createClass({
     return(
       <div className="article-padding-background">
         <div className="article-box">
+          <div className="article-upload-info">
+            <span>Posted by {this.props.name} {this.props.surname} </span>
+          </div>
           <div className="article-heading">
             <div className="article-img-container">
               <a href={this.props.url}>

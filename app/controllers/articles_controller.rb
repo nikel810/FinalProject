@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
     if current_user == nil
       redirect_to '/'
     else
-      @all_articles = Article.all.sort { |x, y| y["created_at"] <=> x["created_at"] }
+      @all_articles = Article
+        .all
+        .includes(:user)
+        .sort { |x, y| y["created_at"] <=> x["created_at"] }
+        .as_json(include: { user: { only: [:name] } })
 
       render :timeline
     end
