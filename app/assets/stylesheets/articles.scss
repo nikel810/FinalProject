@@ -26,10 +26,9 @@
 }
 
 .article-padding-background {
-  padding-top: 15px;
+  padding-top: 27px;
   background-color: #fafafa;
 }
-
 
 .profile-infos {
   background-color: #ffffff;
@@ -37,7 +36,7 @@
   margin: 0 auto;
   margin-top: 7%;
   padding: 3% 5% 2% 5%;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #dbdbdb;
   border-radius: 5px;
   font-family: 'Muli', sans-serif;
 }
@@ -48,7 +47,7 @@
   margin: 0 auto;
   margin-top: 7%;
   padding: 3% 5% 2% 5%;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #dbdbdb;
   border-radius: 5px;
   font-family: 'Muli', sans-serif;
   text-align: center;
@@ -99,7 +98,7 @@ input.form-control, add-article-input-field {
 }
 
 .article-box {
-  border: 1px solid #e7e7e7;
+  border: 1px solid #dbdbdb;
 }
 
 .article-heading{
@@ -139,7 +138,27 @@ input.form-control, add-article-input-field {
 .article-description {
   background-color: #ffffff;
   font-family: 'Playfair Display', serif;
-  padding: 2% 3% 4% 7%;
+  padding: 2% 3% 0% 7%;
+}
+
+.article-reaction {
+  background-color: #ffffff;
+}
+
+.thumbs-up {
+  padding: 2% 0% 3% 7%;
+}
+
+.thumbs-up-count {
+  padding: 2% 3% 3% 1%;
+}
+
+.thumbs-down {
+  padding: 2% 0% 3% 2%;
+}
+
+.thumbs-down-count {
+  padding: 2% 3% 3% 1%;
 }
 
 .btn {
