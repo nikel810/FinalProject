@@ -4,39 +4,58 @@ var Thumbs  = React.createClass({
     return {
       likes: this.props.likes,
       dislikes: this.props.dislikes,
-      clicked: false
+      clickedLike: false,
+      clickedDislike: false,
     };
   },
 
   onClickLike: function(e){
 
-    if (this.state.clicked == false) {
+    if (this.state.clickedLike == false) {
       this.setState({
-        clicked: true
+        clickedLike: true
       })
+      if (this.state.clickedDislike == true) {
+        this.setState({
+          clickedDislike: false
+        })
+        var counter = this.state.dislikes
+        counter = counter -1
+        this.setState({
+          dislikes: counter
+        })
+      }
       e.preventDefault()
       var counter = this.state.likes
       counter = counter + 1
       this.setState({
         likes: counter
       })
-    } else {
-      console.log('test');
     }
   },
 
   onClickDislike: function (e) {
-    if (this.state.clicked == false) {
+    if (this.state.clickedDislike == false) {
       this.setState({
-        clicked: true
-      });
+        clickedDislike: true
+      })
+      if (this.state.clickedLike == true) {
+        this.setState({
+          clickedLike: false
+        })
+        var counter = this.state.likes
+        counter = counter -1
+        this.setState({
+          likes: counter
+        })
+      }
       e.preventDefault()
       var counter = this.state.dislikes
       counter = counter + 1
       this.setState({
         dislikes: counter
       })
-    } 
+    }
 
   },
 
@@ -51,7 +70,7 @@ var Thumbs  = React.createClass({
         <i className="glyphicon glyphicon-thumbs-up thumbs-up" onClick={this.onClickLike} aria-hidden="true"></i>
         <span className="thumbs-up-count">{this.state.likes}</span>
         <i className="glyphicon glyphicon-thumbs-down thumbs-down" onClick={this.onClickDislike} aria-hidden="true"></i>
-        <span className="thumbs-down-count">{this.state.unlikes}</span>
+        <span className="thumbs-down-count">{this.state.dislikes}</span>
       </div>
     );
   }
