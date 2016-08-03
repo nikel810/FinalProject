@@ -20,12 +20,7 @@ var Article = React.createClass({
             {this.props.description}
           </div>
 
-          <div className="article-reaction">
-            <i className="glyphicon glyphicon-thumbs-up thumbs-up" aria-hidden="true"></i>
-            <span className="thumbs-up-count">00</span>
-            <i className="glyphicon glyphicon-thumbs-down thumbs-down" aria-hidden="true"></i>
-            <span className="thumbs-down-count">00</span>
-          </div>
+          <ThumbsUp likes={this.props.likes}/>
 
         </div>
       </div>

@@ -25,3 +25,12 @@ function SignupToggle () {
   $('.signup-link').toggle();
   $('.login-link').toggle();
 }
+var some = $('.thumbs-up')
+console.log(some)
+var thumbsUp = Array.from(some)
+console.log(thumbsUp)
+thumbsUp.forEach(function(ele){
+  console.log(this);
+  // .on('click', function () {
+  //   $(this).toggleClass("test");
+})

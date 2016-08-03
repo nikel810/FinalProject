@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  article: one
+  like: 1
+  unlike: 1
+
+two:
+  user: two
+  article: two
+  like: 1
+  unlike: 1

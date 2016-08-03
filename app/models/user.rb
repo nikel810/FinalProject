@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
+  has_many :ratings
 
   has_secure_password #for activating bcrypt
   validates :name, presence: true
