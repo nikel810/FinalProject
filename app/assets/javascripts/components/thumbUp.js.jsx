@@ -3,28 +3,41 @@ var Thumbs  = React.createClass({
   getInitialState: function() {
     return {
       likes: this.props.likes,
-      unlikes: this.props.dislikes,
-      // clicked: false
+      dislikes: this.props.dislikes,
+      clicked: false
     };
   },
 
   onClickLike: function(e){
 
-    e.preventDefault()
-    var counter = this.state.likes
-    counter = counter + 1
-    this.setState({
-      likes: counter
-    })
+    if (this.state.clicked == false) {
+      this.setState({
+        clicked: true
+      })
+      e.preventDefault()
+      var counter = this.state.likes
+      counter = counter + 1
+      this.setState({
+        likes: counter
+      })
+    } else {
+      console.log('test');
+    }
   },
 
   onClickDislike: function (e) {
-    e.preventDefault()
-    var counter = this.state.unlikes
-    counter = counter + 1
-    this.setState({
-      unlikes: counter
-    })
+    if (this.state.clicked == false) {
+      this.setState({
+        clicked: true
+      });
+      e.preventDefault()
+      var counter = this.state.dislikes
+      counter = counter + 1
+      this.setState({
+        dislikes: counter
+      })
+    } 
+
   },
 
   updateLikes: function(){
