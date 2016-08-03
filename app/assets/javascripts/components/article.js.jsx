@@ -20,7 +20,7 @@ var Article = React.createClass({
             {this.props.description}
           </div>
 
-          <ThumbsUp likes={this.props.likes}/>
+          <Thumbs likes={this.props.likes} dislikes={this.props.dislikes}/>
 
         </div>
       </div>

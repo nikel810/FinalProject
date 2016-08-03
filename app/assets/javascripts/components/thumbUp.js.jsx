@@ -1,9 +1,9 @@
 
-var ThumbsUp  = React.createClass({
+var Thumbs  = React.createClass({
   getInitialState: function() {
     return {
       likes: this.props.likes,
-      dislikes: 0
+      unlikes: this.props.dislikes,
       // clicked: false
     };
   },
@@ -18,6 +18,15 @@ var ThumbsUp  = React.createClass({
     })
   },
 
+  onClickDislike: function (e) {
+    e.preventDefault()
+    var counter = this.state.unlikes
+    counter = counter + 1
+    this.setState({
+      unlikes: counter
+    })
+  },
+
   updateLikes: function(){
     // ajax call updating the likes
     // this.state
@@ -28,8 +37,8 @@ var ThumbsUp  = React.createClass({
       <div className="article-reaction">
         <i className="glyphicon glyphicon-thumbs-up thumbs-up" onClick={this.onClickLike} aria-hidden="true"></i>
         <span className="thumbs-up-count">{this.state.likes}</span>
-        <i className="glyphicon glyphicon-thumbs-down thumbs-down" aria-hidden="true"></i>
-        <span className="thumbs-down-count">00</span>
+        <i className="glyphicon glyphicon-thumbs-down thumbs-down" onClick={this.onClickDislike} aria-hidden="true"></i>
+        <span className="thumbs-down-count">{this.state.unlikes}</span>
       </div>
     );
   }
