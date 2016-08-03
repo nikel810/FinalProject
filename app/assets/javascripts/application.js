@@ -17,3 +17,11 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+
+function SignupToggle () {
+  $('.signup-form').toggle();
+  $('.login-form').toggle();
+  $('.signup-link').toggle();
+  $('.login-link').toggle();
+}

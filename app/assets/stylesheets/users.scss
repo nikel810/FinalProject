@@ -3,36 +3,65 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.welcome_page_html {
+.welcome-page-html {
     display: table;
     margin: auto;
 }
 
-.welcome_page_body {
+.welcome-page-body {
     display: table-cell;
     vertical-align: middle;
     text-align:center;
 }
 
-.newspin_title {
-  margin-top: 15%;
+.home-logo-container {
+  margin-top: 1%;
+  height: 11rem;
+}
+
+.newspin-home-logo {
+  height: 100%;
+  width: auto;
+}
+
+.newspin-title {
+  margin-top: 2%;
   font-family: 'Special Elite', cursive;
   font-size: 410%;
   font-weight: bold;
 }
 
 .slogan {
-  margin-top: 10%;
-  margin-bottom: 13%;
+  margin-top: 3%;
+  margin-bottom: 5%;
   font-family: 'Special Elite', cursive;
   font-size: 230%;
 }
 
-.user_inputs {
+.user-inputs {
   width: 60%;
   padding: 2%;
-  line-height: 26px;
+  line-height: 17px;
   margin: 4px;
+}
+
+.signup-form {
+  display: none;
+}
+
+.signup-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.login-link {
+  display: none;
+  color: #333;
+  text-decoration: none;
+}
+
+.signup-link:hover, .signup-link:focus {
+  text-decoration: none;
 }
 
 input, input[placeholder]{

@@ -26,12 +26,12 @@ var TimelineArticles = React.createClass({
           </div>
 
           <div className="article-reaction">
-            <span className="glyphicon glyphicon-thumbs-up thumbs-up" aria-hidden="true"></span>
+            <i className="glyphicon glyphicon-thumbs-up thumbs-up" aria-hidden="true"></i>
             <span className="thumbs-up-count">00</span>
-            <span className="glyphicon glyphicon-thumbs-down thumbs-down" aria-hidden="true"></span>
+            <i className="glyphicon glyphicon-thumbs-down thumbs-down" aria-hidden="true"></i>
             <span className="thumbs-down-count">00</span>
           </div>
-          
+
         </div>
       </div>
     );

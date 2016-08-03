@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html class="welcome_page_html">
+<html class="welcome-page-html">
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Special+Elite" rel="stylesheet">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Newspin</title>
   </head>
-  <body class="welcome_page_body">
+  <body class="welcome-page-body">
 
-    <h1 class="newspin_title">Newspin</h1>
+    <div class="home-logo-container">
+      <img class="newspin-home-logo" src="/assets/LogoMakr.png" alt="logo" />
+    </div>
+    <h1 class="newspin-title">Newspin</h1>
 
     <h2 class="slogan">Save and share your articles</h2>
 
-    <div class="user_forms">
+    <div class="user-forms">
       <%= form_for :user, url: '/signup', :html => { :class => "signup-form" } do |f| %>
       <%= f.text_field :name,
                         placeholder: "Name",
-                        :class => "user_inputs"%><br>
+                        :class => "user-inputs"%><br>
       <%= f.text_field :surname,
                         placeholder: "Surname",
-                        :class => "user_inputs"%><br>
+                        :class => "user-inputs"%><br>
       <%= f.text_field :email,
                         placeholder: "Email",
-                        :class => "user_inputs" %><br>
+                        :class => "user-inputs" %><br>
       <%= f.password_field :password,
                             placeholder: "Password",
-                            :class => "user_inputs" %><br>
+                            :class => "user-inputs" %><br>
       <%= f.password_field :password_confirmation,
                             placeholder: "Password Confirmation",
-                            :class => "user_inputs" %><br>
+                            :class => "user-inputs" %><br>
       <%= f.submit "Sign Up",
                     :class => "btn btn-default" %>
       <% end %>
@@ -36,14 +41,20 @@
       <%= form_for :user, url: '/login', :html => { :class => "login-form" } do |f| %>
       <%= f.text_field :email,
                         placeholder: "Email",
-                        :class => "user_inputs" %><br>
+                        :class => "user-inputs" %><br>
       <%= f.password_field :password,
                             placeholder: "Password",
-                            :class => "user_inputs" %><br>
+                            :class => "user-inputs" %><br>
       <%= f.submit "Log In",
                     :class => "btn btn-default" %>
       <% end %>
     </div>
+
+    <p>
+      or <br>
+      <a onclick="SignupToggle()" href="javascript:void(0);" class="signup-link">Sign Up</a>
+      <a onclick="SignupToggle()" href="javascript:void(0);" class="login-link">Log In</a>
+    </p>
 
   </body>
 </html>
