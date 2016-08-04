@@ -165,8 +165,16 @@ input.form-control, add-article-input-field {
   color: #e8938b;
 }
 
-.clicked {
-  color: blue;
+.activeLike {
+  color: #3db914;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.activeDislike {
+  color: #e7584b;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .btn {

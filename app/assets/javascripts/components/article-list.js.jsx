@@ -5,7 +5,6 @@ var ArticleList = React.createClass({
 
   render: function () {
 
-    console.log(this.props);
     return (
       <div>
         {this.props.articles.map(function (article) {
