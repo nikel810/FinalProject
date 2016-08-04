@@ -1,6 +1,7 @@
+// var classNames = require('classnames');
 
-var Thumbs  = React.createClass({
-  getInitialState: function() {
+var Thumbs  = React.createClass ({
+  getInitialState: function () {
     return {
       likes: this.props.likes,
       dislikes: this.props.dislikes,
@@ -9,26 +10,26 @@ var Thumbs  = React.createClass({
     };
   },
 
-  onClickLike: function(e){
+  onClickLike: function (e){
 
     if (this.state.clickedLike == false) {
-      this.setState({
+      this.setState ({
         clickedLike: true
       })
       if (this.state.clickedDislike == true) {
-        this.setState({
+        this.setState ({
           clickedDislike: false
         })
         var counter = this.state.dislikes
         counter = counter -1
-        this.setState({
+        this.setState ({
           dislikes: counter
         })
       }
-      e.preventDefault()
+      e.preventDefault ()
       var counter = this.state.likes
       counter = counter + 1
-      this.setState({
+      this.setState ({
         likes: counter
       })
     }
@@ -36,7 +37,7 @@ var Thumbs  = React.createClass({
 
   onClickDislike: function (e) {
     if (this.state.clickedDislike == false) {
-      this.setState({
+      this.setState ({
         clickedDislike: true
       })
       if (this.state.clickedLike == true) {
@@ -45,26 +46,43 @@ var Thumbs  = React.createClass({
         })
         var counter = this.state.likes
         counter = counter -1
-        this.setState({
+        this.setState ({
           likes: counter
         })
       }
-      e.preventDefault()
+      e.preventDefault ()
       var counter = this.state.dislikes
       counter = counter + 1
-      this.setState({
+      this.setState ({
         dislikes: counter
       })
     }
 
   },
 
-  updateLikes: function(){
+  highlightClickedRating: function () {
+    if (this.state.clickedLike == true) {
+      console.log('test');
+      $('thumbs-up').toggleClass('clicked');
+      $('thumbs-up-count').toggleClass('clicked');
+    }
+    if (this.state.clickedDislike == true) {
+      $('thumbs-down').toggleClass('clicked');
+      $('thumbs-down-count').toggleClass('clicked');
+    }
+  },
+
+  updateRatings: function (){
     // ajax call updating the likes
     // this.state
   },
 
-  render: function() {
+  render: function () {
+
+    // var styleNameActive = classNames({
+    //   active: this.state.clickedLike
+    // });
+
     return (
       <div className="article-reaction">
         <i className="glyphicon glyphicon-thumbs-up thumbs-up" onClick={this.onClickLike} aria-hidden="true"></i>
