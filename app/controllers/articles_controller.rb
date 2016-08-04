@@ -30,9 +30,17 @@ class ArticlesController < ApplicationController
       :title => title,
       :description => description,
       :img => img,
-      :favicon => favicon)
-
+      :favicon => favicon
+    )
     @article.save
+
+    @ratings = Rating.new(
+      :user_id => current_user.id,
+      :article_id => @article.id,
+      :like => 0,
+      :unlike => 0
+    )
+    @ratings.save
 
     redirect_to("/profile/#{current_user.id}")
   end
