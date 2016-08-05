@@ -1,12 +1,13 @@
 // var classNames = require('classnames');
 
 var Thumbs  = React.createClass ({
+
   getInitialState: function () {
     return {
       likes: this.props.likes,
       dislikes: this.props.dislikes,
-      clickedLike: false,
-      clickedDislike: false,
+      clickedLike: this.props.vote === 'like',
+      clickedDislike: this.props.vote === 'unlike',
       activeLike: '',
       activeDislike: ''
     };
@@ -29,17 +30,32 @@ var Thumbs  = React.createClass ({
         this.setState ({
           dislikes: counter
         })
+        this.updateRating()
       }
-      e.preventDefault ()
       var counter = this.state.likes
       counter = counter + 1
       this.setState ({
         likes: counter
       })
+      this.updateRating()
     }
+    if (this.state.activeLike == ' activeLike') {
+      this.setState ({
+        clickedLike: false,
+        activeLike: ''
+      })
+      var counter = this.state.likes
+      counter = counter -1
+      this.setState ({
+        likes: counter
+      })
+      this.updateRating()
+    }
+
   },
 
   onClickDislike: function (e) {
+
     if (this.state.clickedDislike == false) {
       this.setState ({
         clickedDislike: true,
@@ -55,20 +71,48 @@ var Thumbs  = React.createClass ({
         this.setState ({
           likes: counter
         })
+        this.updateRating()
       }
-      e.preventDefault ()
       var counter = this.state.dislikes
       counter = counter + 1
       this.setState ({
         dislikes: counter
       })
+      this.updateRating()
+    }
+    if (this.state.activeDislike == ' activeDislike') {
+      this.setState ({
+        clickedDislike: false,
+        activeDislike: ''
+      })
+      var counter = this.state.dislikes
+      counter = counter -1
+      this.setState ({
+        dislikes: counter
+      })
+      this.updateRating()
     }
 
   },
 
-  updateRatings: function (){
-    // ajax call updating the likes
-    // this.state
+  updateRating: function (){
+    var verb = this.state.clickedLike ? 'delete' : 'post'
+    $.ajax({
+       type: verb,
+       url: "/article/:id/rating",
+       success: saveRating,
+       error: noSaveRating
+    })
+
+    function saveRating (response) {
+      console.log('in the success like');
+      console.log(response);
+    }
+    function noSaveRating (error) {
+      console.log('in the error like');
+      console.log(verb);
+    }
+
   },
 
   render: function () {

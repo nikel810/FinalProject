@@ -20,14 +20,30 @@ class UsersController < ApplicationController
 
   def profile
     if current_user
-      @articles = current_user.articles.sort { |x, y| y["created_at"] <=> x["created_at"] }
+      @articles = current_user.articles
+      .includes(:user, :ratings)
+      .sort { |x, y| y["created_at"] <=> x["created_at"] }
+      .as_json(include: {
+        user: { only: [:name] },
+        ratings: {only: [:like, :unlike]} })
+      .map { |article|
+        rating_by_user =
+          Article.find_by(id: article['id'])
+            .ratings
+            .find_by(id: current_user.id)
 
+        if rating_by_user.present?
+          vote = 'like' if rating_by_user.like > 0
+          vote = 'unlike' if rating_by_user.unlike > 0
+        end
+        article.merge(vote: vote)
+      }
       render action: 'profile', id: current_user.id
     else
       render :home
     end
-
   end
+
 
   private
 

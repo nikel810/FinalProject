@@ -15,8 +15,9 @@ var ArticleList = React.createClass({
             description={article.description}
             img={article.img}
             favicon={article.favicon}
-            likes={11}
-            dislikes={24}/>
+            likes={article.ratings[0].like}
+            dislikes={article.ratings[0].unlike}
+            vote={article.vote}/>
         })}
       </div>
     );

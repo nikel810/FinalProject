@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get '/timeline', to: 'articles#timeline'
   get '/profile/:id', to: 'users#profile', as: 'profile'
   post '/profile/add_article', to: 'articles#create'
+
+  post '/article/:id/post_rating', to: 'articles#post_rating'
+  delete '/article/:id/delete_rating', to: 'articles#delete_rating'
 end

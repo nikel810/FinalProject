@@ -4,7 +4,7 @@ class CreateRatings < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.references :article, foreign_key: true
       t.integer :like
-      t.integer :unlike
+      t.integer :dislike
 
       t.timestamps
     end
