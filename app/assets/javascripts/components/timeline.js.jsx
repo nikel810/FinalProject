@@ -19,6 +19,9 @@ var Timeline = React.createClass({
               surname={article.user.surname}
               img={article.img}
               favicon={article.favicon}
+              likes={article.ratings[0].like}
+              dislikes={article.ratings[0].unlike}
+              vote={article.vote}
             />
           )
         })}
