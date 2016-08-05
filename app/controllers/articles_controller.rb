@@ -42,11 +42,9 @@ class ArticlesController < ApplicationController
   end
 
   def delete_rating
-    byebug
   end
 
   def post_rating
-
   end
 
   private

@@ -24,7 +24,7 @@ var Article = React.createClass({
             likes={this.props.likes}
             dislikes={this.props.dislikes}
             vote={this.props.vote}
-          />
+            />
 
         </div>
       </div>

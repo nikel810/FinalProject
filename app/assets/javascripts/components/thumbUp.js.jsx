@@ -97,6 +97,7 @@ var Thumbs  = React.createClass ({
 
   updateRating: function (){
     var verb = this.state.clickedLike ? 'delete' : 'post'
+
     $.ajax({
        type: verb,
        url: "/article/:id/rating",
@@ -110,7 +111,6 @@ var Thumbs  = React.createClass ({
     }
     function noSaveRating (error) {
       console.log('in the error like');
-      console.log(verb);
     }
 
   },
